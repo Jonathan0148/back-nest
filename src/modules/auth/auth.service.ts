@@ -38,7 +38,7 @@ export class AuthService {
         return data;
     }
 
-    private validateUpdatePass(susuUpdatePass: string): boolean{
+    private validateUpdatePass(susuUpdatePass: Date): boolean{
         const currentDate = new Date();
         const updatedPassDate = new Date(susuUpdatePass);
         const differenceInMs = currentDate.getTime() - updatedPassDate.getTime();

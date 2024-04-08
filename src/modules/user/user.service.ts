@@ -26,7 +26,10 @@ export class UserService {
 
     if (infoUser.SUSU_PWD == passwordEncrypt) throw new HttpException('La contraseña no puede ser la misma que la anterior', 403);
 
-    await this.repositoryUser.update(userId, {SUSU_PWD: passwordEncrypt});
+    await this.repositoryUser.update({ SUSU_ID_REG: userId }, {
+      SUSU_PWD: passwordEncrypt,
+      SUSU_UPDATE_PASS: new Date()
+    });
 
     return {
       statusCode: 200,

@@ -95,5 +95,5 @@ export class User {
     userZone: UserZone;
 
     @Column({ type: 'datetime'})
-    SUSU_UPDATE_PASS: string;
+    SUSU_UPDATE_PASS: Date
 }
